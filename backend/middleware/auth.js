@@ -1,5 +1,5 @@
 const dummyIsAuthorized = true;
-const dummyUserId = "123456";
+const dummyUserId = "000000";
 
 export const authMiddleware = (req, res, next) => {
   if (!dummyIsAuthorized) {

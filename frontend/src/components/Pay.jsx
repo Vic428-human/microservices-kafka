@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { CheckCircle, Loader2, ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 const Pay = ({ cart }) => {
   const total = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
@@ -16,6 +16,7 @@ const Pay = ({ cart }) => {
       });
       const endTime = Date.now();
       const duration = (endTime - startTime) / 1000;
+      console.log('response ==>', response.data);
       return { ...response, duration };
     },
   });

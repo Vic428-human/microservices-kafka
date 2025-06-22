@@ -9,18 +9,20 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
+  // 預設了該幣種的購買數量跟當前價格
   useEffect(() => {
-    fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+    fetch("https://api.coingecko.com/api/v3/coins/ethereum")
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.json();
       })
       .then((json) => {
-        // 格式化成 cart 的格式
         const formatted = [{
           id: json.id || 3,
           name: `${json.name} (${json.symbol.toUpperCase()})`,
           price: json.market_data.current_price.usd,
+          qty: 10,
           image: json.image.large,
           description: json.description?.en || "",
         }];
