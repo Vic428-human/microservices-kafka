@@ -27,17 +27,13 @@ export default function RootLayout({ children }) {
         >
           <nav className="flex justify-between items-center py-4 mb-8">
             <div className="flex items-center gap-4">
-              <Image src="/logo.png" alt="logo" width={50} height={50} />
-              <Link href="/" className="text-2xl font-black">
-                Lama Shop
-              </Link>
             </div>
             <div className="flex items-center gap-6">
               <House className="w-5 h-5" />
               <Bell className="w-5 h-5" />
               <ShoppingCart className="w-5 h-5" />
               <Image
-                src="/avatar.png"
+                src="/defaultAvatar.png"
                 alt="avatar"
                 width={32}
                 height={32}
